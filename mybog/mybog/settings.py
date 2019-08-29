@@ -54,7 +54,7 @@ ROOT_URLCONF = 'mybog.urls'
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',  # 模板引擎，默认django
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',     # 模板引擎，默认django
         'DIRS': [],               # 模板所在的目录
         'APP_DIRS': True,         # 是否启用app目录
         'OPTIONS': {
@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'mybog.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': 'demo',
+        'USER': 'root',
+        'PASSWORD': 'root',
+
     }
 }
 
@@ -104,15 +108,15 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
-LANGUAGE_CODE = 'zh_Hans' # en-us
+LANGUAGE_CODE = 'zh_Hans'   # en-us
 
-TIME_ZONE = 'Asia/Shanghai' # UTC
+TIME_ZONE = 'Asia/Shanghai'     # UTC
 
 USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = False # True
+USE_TZ = False      # True
 
 
 # Static files (CSS, JavaScript, Images)
